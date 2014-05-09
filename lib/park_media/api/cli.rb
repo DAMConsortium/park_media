@@ -31,15 +31,17 @@ module ParkMedia
 
       def parse_options
         options = ParkMedia::API.default_options.merge({
+          :server_address => API::DEFAULT_SERVER_ADDRESS,
+          :server_port => API::DEFAULT_SERVER_PORT,
           :log_to => STDERR,
           :log_level => Logger::WARN,
           :options_file_path => options_file_path,
         })
         op = OptionParser.new
-        op.on('--park-media-host-address HOSTADDRESS', 'The AdobeAnywhere server address.',
-              "\tdefault: #{options[:host_address]}") { |v| options[:host_address] = v }
-        op.on('--park-media-host-port PORT', 'The port on the Park Media server to connect to.',
-              "\tdefault: #{options[:port]}") { |v| options[:port] = v }
+        op.on('--park-media-server-address ADDRESS', 'The Park Media server address.',
+              "\tdefault: #{options[:server_address]}") { |v| options[:server_address] = v }
+        op.on('--park-media-server-port PORT', 'The port on the Park Media server to connect to.',
+              "\tdefault: #{options[:server_port]}") { |v| options[:server_port] = v }
         op.on('--park-media-username USERNAME', 'The username to login with. This will be ignored if cookie contents is set and the force login parameter is false.',
               "\tdefault: #{options[:username]}") { |v| options[:username] = v }
         op.on('--park-media-password PASSWORD', 'The password to login with. This will be ignored if cookie contents is set and the force login parameter is false.',
