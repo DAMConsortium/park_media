@@ -2,6 +2,7 @@ require 'logger'
 
 require 'park_media/http_handler'
 require 'park_media/api/response_parser'
+require 'park_media/api/xml_helper'
 
 module ParkMedia
 
@@ -374,7 +375,7 @@ module ParkMedia
 
       data = args
       xml = AssetEditXMLGenerator.generate_xml(data)
-      http_put("Asset/#{asset_id}", xml)
+      http_put("Asset/#{asset_id}", xml, 'Content-Type' => 'text/xml')
     end
 
     def content_scheduler(device_id)
