@@ -40,7 +40,7 @@ Park Media
 
 ##### Asset Create
 
-    park_media --method-name asset_create --method-arguments '{"assetName":"Test", "assetType":"Audio","assetFileExtension":"mp3":"assetFileUrl":"http://someserver/somefile.mp3","metadata/someFieldName":"SomeFieldValue"}'
+    park_media --method-name asset_create --method-arguments '{"assetName":"Test", "assetType":"Audio","assetFileExtension":"mp3", "assetFileUrl":"http://someserver/somefile.mp3","metadata/someFieldName":"SomeFieldValue"}'
 
 ##### Asset Get
 
@@ -48,7 +48,7 @@ Park Media
 
 ##### Asset Edit
 
-    [COMING SOON]
+    park_media --method-name asset_edit --method-arguments '{"asset_id":1234, "assetName":"new name", "asset-metadata" : { "artist" : "some artist", "track" : "some track" } }'
 
 #### Options File
 

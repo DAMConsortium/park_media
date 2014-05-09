@@ -1,6 +1,7 @@
 *.gem
 *.rbc
 /bin/dev/
+/bin/*_options
 /.config
 /coverage/
 /InstalledFiles
