@@ -373,7 +373,8 @@ module ParkMedia
       raise ArgumentError ':asset_id is a required argument.' unless asset_id
 
       data = args
-      http_put_xml("Asset/#{asset_id}", data)
+      xml = AssetEditXMLGenerator.generate_xml(data)
+      http_put("Asset/#{asset_id}", xml)
     end
 
     def content_scheduler(device_id)
