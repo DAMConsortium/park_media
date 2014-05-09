@@ -33,7 +33,7 @@ Park Media
                                           default: warn
             --[no-]options-file [FILENAME]
                                          Path to a file which contains default command line arguments.
-                                          default: /~/.options/park_media
+                                          default: ~/.options/park_media
         -h, --help                       Show this message.
 
 #### EXAMPLES
@@ -51,6 +51,9 @@ Park Media
     park_media --method-name asset_edit --method-arguments '{"asset_id":1234, "assetName":"new name", "asset-metadata" : { "artist" : "some artist", "track" : "some track" } }'
 
 #### Options File
+
+##### Default Location
+    ~/.options/park_media
 
 ##### Example Content
 
