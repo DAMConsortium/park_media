@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+begin
+  require 'park_media/api/cli'
+rescue LoadError
+  lib_path = File.expand_path('../../lib', __FILE__)
+  $:.unshift(lib_path) and retry unless $:.include?(lib_path)
+  raise
+end
+
+ParkMedia::API::CLI.new
